@@ -28,17 +28,6 @@
     font-size: 1.2rem;
 }
 
-#cta_button {
-    display: flex;
-    gap: 24px;
-    justify-content: flex-start;
-    align-items: flex-start;
-}
-
-#cta_button a {
-    text-decoration: none;
-    color: $color-neutral-9;
-}
 
 
 #link_icon{
@@ -50,7 +39,7 @@
     gap: 10px;
     align-items: center;
     background-color: $color-neutral-0;
-    padding: 8px 14px;
+    padding: 10px 14px;
     font-weight: 500;
     box-shadow: 0px 0px 12px 4px rgba(0, 0, 0, 0.1);
     border-radius: 12px;
