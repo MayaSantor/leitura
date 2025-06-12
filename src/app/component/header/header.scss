@@ -1,7 +1,7 @@
-@import '../../../../public/styles/variables.scss';
+@use '../../../../public/styles/variables.scss' as *;
 
 header {
-    width: 100vw;
+    width: 100%;
     padding: 28px 8%;
     position: sticky;
     top: 0;
@@ -12,7 +12,7 @@ header {
 
 
 #navbar {
-    width: 90vw;
+    width: 90%;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -26,10 +26,10 @@ header {
 }
 
 .logo {
-  margin-left: -80px; /* se quiser manter o deslocamento para a esquerda */
+  margin-left: -80px; 
   display: flex;
-  align-items: center;  /* alinha verticalmente */
-  gap: 8px; /* espaçamento entre a imagem e o texto, ajuste como preferir */
+  align-items: center;
+  gap: 8px; 
 }
 
 #nav_text {
@@ -42,6 +42,7 @@ header {
     list-style-type: none;
     gap: 48px;
     font-size: 18px;
+    
 }
 
 .nav-item a {
