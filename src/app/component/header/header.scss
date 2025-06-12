@@ -1,7 +1,7 @@
 @import '../../../../public/styles/variables.scss';
 
 header {
-    width: 100%;
+    width: 100vw;
     padding: 28px 8%;
     position: sticky;
     top: 0;
@@ -9,24 +9,31 @@ header {
     z-index: 3;
 }
 
+
+
 #navbar {
-    width: 90%;
+    width: 90vw;
     display: flex;
     align-items: center;
     justify-content: space-between;
     text-align: center;
 }
 
+
 #nav_logo {
-    color: $color-primary-6;
-    width: 35px;
+    width: 50px;
     height: auto;
 }
 
+.logo {
+  margin-left: -80px; /* se quiser manter o deslocamento para a esquerda */
+  display: flex;
+  align-items: center;  /* alinha verticalmente */
+  gap: 8px; /* espaçamento entre a imagem e o texto, ajuste como preferir */
+}
+
 #nav_text {
-    font-size: 24px;
-    position: relative;
-    top: -10px;
+    font-size: 30px;
     color: $color-primary-6;
 }
 
@@ -34,6 +41,7 @@ header {
     display: flex;
     list-style-type: none;
     gap: 48px;
+    font-size: 18px;
 }
 
 .nav-item a {
@@ -115,7 +123,7 @@ header {
     display: none;
 }
 
-@media screen and (max-width: 1170px) {
+@media screen and (max-width: 1024px) {
     #nav_list,
     #navbar .btn-default {
         display: none;
@@ -143,3 +151,4 @@ header {
         text-align: center;
     } 
 }
+
