@@ -1,0 +1,35 @@
+@use '../../../../public/styles/variables.scss' as *;
+@use '../../../../public/styles/_shared.scss' as shared;
+
+footer {
+    background-color: $color-primary-2;
+}
+
+#footer_items {
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 8% 24px 8%;
+    align-items: center;
+}
+
+#copyright {
+    color: $color-neutral-9;
+    font-weight: 500;
+    padding-top: 25px;
+    
+}
+
+#skoob_icon {
+    width: 25px;
+}
+
+.social_media_buttons {
+    padding-top: 18px;
+}
+
+@media screen and (max-width: 600px) {
+    #footer_items{
+        flex-direction: column;
+        gap: 20px;
+    }
+}

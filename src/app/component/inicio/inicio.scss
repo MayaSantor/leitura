@@ -1,4 +1,5 @@
 @use '../../../../public/styles/variables.scss' as *;
+@use '../../../../public/styles/_shared.scss' as shared;
 
 
 #home {
@@ -34,20 +35,7 @@
     width: 25px;
 }
 
-#link_button {
-    display: flex;
-    gap: 10px;
-    align-items: center;
-    background-color: $color-neutral-0;
-    padding: 10px 14px;
-    font-weight: 500;
-    box-shadow: 0px 0px 12px 4px rgba(0, 0, 0, 0.1);
-    border-radius: 12px;
-}
 
-#link_button button {
-    box-shadow: none;
-}
 
 #banner {
     display: flex;
@@ -91,9 +79,3 @@
         align-items: center;
     }
 }
-
-@media screen and (max-width: 450px) {
-    #link_button button {
-        display: none;
-    }
-} 

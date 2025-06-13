@@ -4,6 +4,7 @@ import { Header } from './component/header/header';
 import { Inicio } from './component/inicio/inicio';
 import { Preferidos } from './component/preferidos/preferidos';
 import { Compilado } from './component/compilado/compilado';
+import { Footer } from './component/footer/footer';
 
 @Component({
   selector: 'app-root',
@@ -11,7 +12,8 @@ import { Compilado } from './component/compilado/compilado';
     Header, 
     Inicio,
     Preferidos,
-    Compilado
+    Compilado,
+    Footer
   ],
   templateUrl: './app.html',
   styleUrl: './app.scss'
