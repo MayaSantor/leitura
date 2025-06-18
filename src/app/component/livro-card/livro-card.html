@@ -1,0 +1,32 @@
+
+<div class="livro">
+  <div class="livro-heart">
+    <i class="fa-solid fa-heart"></i>
+  </div>
+
+  <!-- Supondo que futuramente você vá trazer o caminho da imagem pelo backend -->
+  <!-- <img src="/images/capa-padrao.jpg" class="book-image" alt="Capa do livro" /> -->
+
+  <h3 class="livro-title">
+    {{ livro.tituloLivro }}
+  </h3>
+
+  <span class="livro-description">
+    {{ livro.resenhaLivro }}
+  </span>
+
+  <div class="livro-rate">
+    <i *ngFor="let estrela of [1,2,3,4,5]"
+       class="fa-star"
+       [ngClass]="{
+         'fa-solid': livro.avaliacao >= estrela,
+         'fa-regular': livro.avaliacao < estrela
+       }">
+    </i>
+    <!-- <span>(nº de páginas)</span> ajuste se quiser trazer isso depois -->
+  </div>
+
+  <div class="reading-date">
+    <h4>{{ livro.dataInicio }} - {{ livro.dataFim }}</h4>
+  </div>
+</div>
