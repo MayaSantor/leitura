@@ -1,0 +1,81 @@
+<body>
+  <app-header></app-header>
+
+  <main>
+    <section class="cadastro-container">
+      <div class="cadastro-menu">
+        <div class="form-cadastro">
+          <div class="titulo">
+            <h1>Cadastre um novo livro <span>preferido</span>!</h1>
+          </div>
+
+          <form (ngSubmit)="cadastrarLivro()">
+            <div class="dados-cadastro">
+              <label for="tituloLivro">Título do Livro</label>
+              <input 
+                type="text" 
+                id="tituloLivro" 
+                name="tituloLivro" 
+                [(ngModel)]="tituloLivro" 
+                required 
+                placeholder="Digite o título do livro">
+            </div>
+
+            <div class="dados-cadastro">
+              <label for="dataInicio">Data de Início da Leitura:</label>
+              <input 
+                type="date" 
+                id="dataInicio" 
+                name="dataInicio" 
+                [(ngModel)]="dataInicio" 
+                required>
+            </div>
+
+            <div class="dados-cadastro">
+              <label for="dataFim">Data de Fim da Leitura:</label>
+              <input 
+                type="date" 
+                id="dataFim" 
+                name="dataFim" 
+                [(ngModel)]="dataFim" 
+                required>
+            </div>
+
+            <div class="dados-cadastro">
+              <label for="resenhaLivro">Sua resenha:</label>
+              <textarea 
+                rows="4"
+                class="resenha-cadastro"
+                type="text" 
+                id="resenhaLivro" 
+                name="resenhaLivro" 
+                [(ngModel)]="resenhaLivro" 
+                required 
+                placeholder="Escreva aqui sua resenha!">
+              </textarea>
+            </div>
+
+            <div class="dados-cadastro">
+              <label for="avaliacao">Sua nota:</label>
+              <div class="estrelas">
+                <i 
+                  *ngFor="let estrela of [1,2,3,4,5]" 
+                  class="fa-star" 
+                  [ngClass]="getClasseEstrela(estrela)"
+                  (click)="avaliar(estrela)"
+                  required >
+                </i>
+              </div>
+            </div>
+
+            <div class="btn-cadastrar">
+              <button type="submit">Cadastrar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <app-footer></app-footer>
+</body>

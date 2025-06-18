@@ -14,11 +14,14 @@
     flex-direction: column;
     gap: 28px;
     margin-top: 5%;
+    padding-top: 15vh;
+
 }
 
 #cta .title {
     font-size: 4rem;
     color: $color-neutral-9;
+    padding-bottom: 15px;
 }
 
 #cta .title span {
@@ -27,6 +30,7 @@
 
 #cta .description {
     font-size: 1.2rem;
+    padding-bottom: 15px;
 }
 
 
