@@ -14,6 +14,8 @@ import { LivroService } from '../../services/livro';
 })
 export class Preferidos implements OnInit {
   livros: Livro[] = [];
+  currentIndex = 0;
+  cardsPerPage = 4;
 
   constructor(private livroService: LivroService) {}
 
@@ -22,5 +24,20 @@ export class Preferidos implements OnInit {
       next: (dados: Livro[]) => this.livros = dados,
       error: (err) => console.error('Erro ao buscar livros:', err)
     });
+  }
+   get livrosToShow() {
+    return this.livros.slice(this.currentIndex, this.currentIndex + this.cardsPerPage);
+  }
+
+  next() {
+    if (this.currentIndex + this.cardsPerPage < this.livros.length) {
+      this.currentIndex++;
+    }
+  }
+
+  prev() {
+    if (this.currentIndex > 0) {
+      this.currentIndex--;
+    }
   }
 }

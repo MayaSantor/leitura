@@ -28,6 +28,45 @@
   box-sizing: border-box;
 }
 
+
+.carrossel-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  max-width: 100%; // ajuste conforme seu layout
+  margin: auto;
+  
+}
+
+.cards-wrapper {
+  display: flex;
+  gap: 16px;
+  overflow: hidden;
+  flex: 1;
+}
+
+.card {
+  flex: 0 0 calc(25% - 12px); // 4 cards por linha, com gap
+}
+  
+.nav-button {
+  background-color: $color-primary-5;
+  border: none;
+  color: $color-primary-1;
+  font-size: 1.8rem;
+  padding: 8px 12px;
+  cursor: pointer;
+  user-select: none;
+  border-radius: 4px;
+  opacity: 80%;
+}
+
+// .nav-button:disabled {
+//   opacity: 0.4;
+//   cursor: not-allowed;
+// }
+
+
 @media screen and (max-width: 1170px) {
   .livro-wrapper {
     flex: 0 1 calc(50% - 24px);

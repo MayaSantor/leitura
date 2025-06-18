@@ -2,10 +2,25 @@
   <h2 class="section-title">Preferidos</h2>
   <h3 class="section-subtitle">Melhores leituras do ano </h3>
 
-  <div id="preferidos">
-    <app-livro-card 
-      class="livro-wrapper"
-      *ngFor="let livro of livros" [livro]="livro">
-    </app-livro-card>
+  <div class="carrossel-container">
+    <button
+  class="nav-button left"
+  (click)="prev()"
+  *ngIf="currentIndex > 0">
+  ‹
+</button>
+
+    <div class="cards-wrapper">
+      <div class="card" *ngFor="let livro of livrosToShow">
+        <app-livro-card [livro]="livro"></app-livro-card>
+      </div>
+    </div>
+
+    <button
+  class="nav-button right"
+  (click)="next()"
+  *ngIf="currentIndex + cardsPerPage < livros.length">
+  ›
+</button>
   </div>
 </section>
