@@ -20,11 +20,20 @@ export class Preferidos implements OnInit {
   constructor(private livroService: LivroService) {}
 
   ngOnInit(): void {
-    this.livroService.getLivros().subscribe({
-      next: (dados: Livro[]) => this.livros = dados,
-      error: (err) => console.error('Erro ao buscar livros:', err)
-    });
-  }
+     this.definirCardsPorPagina(); // já define ao carregar
+
+  window.addEventListener('resize', () => {
+    this.definirCardsPorPagina();
+  });
+
+  this.livroService.getLivros().subscribe({
+    next: (dados: Livro[]) => {
+      this.livros = dados;
+      this.definirCardsPorPagina(); // define de novo com os dados
+    },
+    error: (err) => console.error('Erro ao buscar livros:', err)
+  });
+}
    get livrosToShow() {
     return this.livros.slice(this.currentIndex, this.currentIndex + this.cardsPerPage);
   }
@@ -40,4 +49,24 @@ export class Preferidos implements OnInit {
       this.currentIndex--;
     }
   }
+
+  definirCardsPorPagina() {
+  const largura = window.innerWidth;
+
+  if (largura < 600) {
+    this.cardsPerPage = 1;
+  } else if (largura < 900) {
+    this.cardsPerPage = 2;
+  } else if (largura < 1200) {
+    this.cardsPerPage = 3;
+  } else {
+    this.cardsPerPage = 4;
+  }
+
+  // Garante que o índice não ultrapasse o limite
+  if (this.currentIndex + this.cardsPerPage > this.livros.length) {
+    this.currentIndex = Math.max(0, this.livros.length - this.cardsPerPage);
+  }
+}
+
 }

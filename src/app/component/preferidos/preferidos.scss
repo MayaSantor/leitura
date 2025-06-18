@@ -45,9 +45,7 @@
   flex: 1;
 }
 
-.card {
-  flex: 0 0 calc(25% - 12px); // 4 cards por linha, com gap
-}
+
   
 .nav-button {
   background-color: $color-primary-5;
@@ -67,15 +65,24 @@
 // }
 
 
-@media screen and (max-width: 1170px) {
-  .livro-wrapper {
-    flex: 0 1 calc(50% - 24px);
-    min-width: 250px;
+.card {
+  flex: 0 0 calc(100% / 4 - 16px); // padrão para 4 por vez
+}
+
+@media (max-width: 1200px) {
+  .card {
+    flex: 0 0 calc(100% / 3 - 16px);
   }
 }
 
-@media screen and (max-width: 600px) {
-  .livro-wrapper {
-    flex: 0 1 100%;
+@media (max-width: 900px) {
+  .card {
+    flex: 0 0 calc(100% / 2 - 16px);
+  }
+}
+
+@media (max-width: 600px) {
+  .card {
+    flex: 0 0 100%;
   }
 }
