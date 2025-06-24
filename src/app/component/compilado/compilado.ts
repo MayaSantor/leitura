@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Livro } from '../../models/livro.interface';
 
 @Component({
   selector: 'app-compilado',
@@ -7,5 +8,5 @@ import { Component } from '@angular/core';
   styleUrl: './compilado.scss'
 })
 export class Compilado {
-
+  @Input() livros: Livro[] = [];
 }

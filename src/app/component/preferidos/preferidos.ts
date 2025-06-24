@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { LivroCard } from '../livro-card/livro-card';
 import { CommonModule } from '@angular/common';
 import { Livro } from '../../models/livro.interface';
@@ -13,7 +13,7 @@ import { LivroService } from '../../services/livro';
   styleUrl: './preferidos.scss'
 })
 export class Preferidos implements OnInit {
-  livros: Livro[] = [];
+  @Input() livros: Livro[] = []
   currentIndex = 0;
   cardsPerPage = 4;
 

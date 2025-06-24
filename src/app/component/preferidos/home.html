@@ -1,0 +1,11 @@
+<app-header></app-header>
+
+<app-filtro (anoSelecionado)="onAnoSelecionado($event)"></app-filtro>
+
+<app-inicio></app-inicio>
+
+<app-preferidos [livros]="livrosFiltrados"></app-preferidos>
+
+<app-compilado [livros]="livrosFiltrados"></app-compilado>
+
+<app-footer></app-footer>
