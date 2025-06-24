@@ -8,56 +8,57 @@
             <img src="/images/book-logo.png" alt="" id="nav_logo">
             <span id="nav_text">livros</span>
         </div>
-        <ul id="nav_list">
-            <li class="nav-item active">
-                <a href="#home">Início</a>
-            </li>
-            <li class="nav-item">
-                <a href="#menu">Preferidos</a>
-            </li>
-            <li class="nav-item">
-                <a href="#compilado">Estatística</a>
-            </li>
-            <li class="dropdown">
-                <a href="#" class="dropbtn">Ano de Leitura</a>
-                <ul class="dropdown-content">
-                    <li><a href="">Todos</a></li>
-                    <li><a href="">2025</a></li>
-                    <li><a href="">2024</a></li>
-                </ul>
-            </li>
-            <li class="nav-item">
-                <a href="cadastro">Cadastro</a>
+         
+    <ul id="nav_list">
+      <li class="nav-item" [class.active]="secaoAtiva === 'home'">
+        <a href="#" (click)="scrollPara('home', $event)">Início</a>
+      </li>
+      <li class="nav-item" [class.active]="secaoAtiva === 'preferidos'">
+        <a href="#" (click)="scrollPara('preferidos', $event)">Preferidos</a>
+      </li>
+      <li class="nav-item" [class.active]="secaoAtiva === 'compilado'">
+        <a href="#" (click)="scrollPara('compilado', $event)">Estatística</a>
+      </li>
 
-            </li>
+      <li class="dropdown">
+        <button class="dropbtn" type="button">Ano de Leitura</button>
+        <ul class="dropdown-content">
+          <li><a href="#" (click)="scrollPara('home', $event)">Todos</a></li>
+          <li><a href="#" (click)="scrollPara('ano-2025', $event)">2025</a></li>
+          <li><a href="#" (click)="scrollPara('ano-2024', $event)">2024</a></li>
         </ul>
+      </li>
 
+      <li class="nav-item">
+        <a routerLink="/cadastro">Cadastro</a>
+      </li>
+    </ul>
 
-        <button id="mobile_btn">
-            <i class="fa-solid fa-bars"></i>
-        </button>
+    <button id="mobile_btn" (click)="toggleMobileMenu()" aria-label="Abrir menu">
+      <i class="fa-solid fa-bars" [class.active]="menuAtivo"></i>
+    </button>
+  </nav>
 
-    </nav>
+  <div id="mobile_menu" [class.active]="menuAtivo">
+    <ul id="mobile_nav_list">
+      <li class="nav-item" [class.active]="secaoAtiva === 'home'">
+        <a href="#" (click)="scrollPara('home', $event)">Início</a>
+      </li>
+      <li class="nav-item" [class.active]="secaoAtiva === 'preferidos'">
+        <a href="#" (click)="scrollPara('preferidos', $event)">Preferidos</a>
+      </li>
+      <li class="nav-item" [class.active]="secaoAtiva === 'compilado'">
+        <a href="#" (click)="scrollPara('compilado', $event)">Estatística</a>
+      </li>
 
-    <div id="mobile_menu">
-        <ul id="mobile_nav_list">
-            <li class="nav-item">
-                <a href="#home">Início</a>
-            </li>
-            <li class="nav-item">
-                <a href="#menu">Preferidos</a>
-            </li>
-            <li class="nav-item">
-                <a href="#compilado">Estatística</a>
-            </li>
-            <li class="dropdown">
-                <a href="#" class="dropbtn">Ano de Leitura</a>
-                <ul class="dropdown-content">
-                    <li><a href="">Todos</a></li>
-                    <li><a href="">2025</a></li>
-                    <li><a href="">2024</a></li>
-                </ul>
-            </li>
+      <li class="dropdown">
+        <button class="dropbtn" type="button">Ano de Leitura</button>
+        <ul class="dropdown-content">
+          <li><a href="#" (click)="scrollPara('home', $event)">Todos</a></li>
+          <li><a href="#" (click)="scrollPara('ano-2025', $event)">2025</a></li>
+          <li><a href="#" (click)="scrollPara('ano-2024', $event)">2024</a></li>
         </ul>
-    </div>
+      </li>
+    </ul>
+  </div>
 </header>
