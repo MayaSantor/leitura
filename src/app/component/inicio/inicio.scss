@@ -16,16 +16,17 @@
     margin-top: 5%;
     padding-top: 15vh;
 
+
 }
 
 #cta .title {
     font-size: 4rem;
-    color: $color-neutral-9;
+    color: $color-primary-6;
     padding-bottom: 15px;
 }
 
 #cta .title span {
-    color: $color-primary-6;
+    color: $color-neutral-0;
 }
 
 #cta .description {
@@ -37,6 +38,7 @@
 
 #link_icon{
     width: 25px;
+    
 }
 
 
@@ -48,6 +50,7 @@
     width: 30%;
     height: auto;
     z-index: 2;
+    
 }
 
 #banner img {
@@ -56,7 +59,7 @@
 }
 
 .shape {
-    background-color: $color-primary-2;
+    background-color: $color-neutral-0;
     width: 55%;
     height: 100%;
     position: absolute;

@@ -7,12 +7,14 @@
     align-items: center;
     justify-content: center;
     background-color: $color-primary-5;
+    color: $color-neutral-0;
     border-radius: 12px;
     padding: 15px 15px;
     font-weight: 600;
     box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.1);
     cursor: pointer;
     transition: background-color .3s ease;
+    
 }
 
 .btn-default:hover {
@@ -33,6 +35,9 @@
     color: $color-neutral-9;
 }
 
+#cta_button .btn-default {
+  color: $color-neutral-0;
+}
 
 #link_button {
     display: flex;
